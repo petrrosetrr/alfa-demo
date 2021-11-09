@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/alfa-demo/static/css/main.46a08d9c.chunk.css",
+    "main.js": "/alfa-demo/static/js/main.ad749ab7.chunk.js",
+    "main.js.map": "/alfa-demo/static/js/main.ad749ab7.chunk.js.map",
+    "runtime-main.js": "/alfa-demo/static/js/runtime-main.399c7b03.js",
+    "runtime-main.js.map": "/alfa-demo/static/js/runtime-main.399c7b03.js.map",
+    "static/css/2.3c5162cb.chunk.css": "/alfa-demo/static/css/2.3c5162cb.chunk.css",
+    "static/js/2.009be378.chunk.js": "/alfa-demo/static/js/2.009be378.chunk.js",
+    "static/js/2.009be378.chunk.js.map": "/alfa-demo/static/js/2.009be378.chunk.js.map",
+    "index.html": "/alfa-demo/index.html",
+    "static/css/2.3c5162cb.chunk.css.map": "/alfa-demo/static/css/2.3c5162cb.chunk.css.map",
+    "static/css/main.46a08d9c.chunk.css.map": "/alfa-demo/static/css/main.46a08d9c.chunk.css.map",
+    "static/js/2.009be378.chunk.js.LICENSE.txt": "/alfa-demo/static/js/2.009be378.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/alfa-demo/static/media/outline-icons.ddae9b1b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.399c7b03.js",
+    "static/css/2.3c5162cb.chunk.css",
+    "static/js/2.009be378.chunk.js",
+    "static/css/main.46a08d9c.chunk.css",
+    "static/js/main.ad749ab7.chunk.js"
+  ]
+}
