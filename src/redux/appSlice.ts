@@ -31,9 +31,9 @@ export const appSlice = createSlice({
                 }
             }
         },
-        deleteItem ({favorites, deleted}, {payload}: PayloadAction<string>) {
-            deleted.push(payload);
-            favorites = favorites.filter(id => id !== payload);
+        deleteItem (state, {payload}: PayloadAction<string>) {
+            state.deleted.push(payload);
+            state.favorites = state.favorites.filter(id => id !== payload);
         },
     }
 });

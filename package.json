@@ -2,6 +2,7 @@
   "name": "alpha-demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://petrrosetrr.github.io/alfa-demo",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^4.2.4",
@@ -14,6 +15,7 @@
     "@types/react-redux": "^7.1.20",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
+    "gh-pages": "^3.2.3",
     "nanoid": "^3.1.30",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,6 +27,8 @@
     "typescript": "~4.1.5"
   },
   "scripts": {
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
