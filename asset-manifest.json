@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/alfa-demo/static/css/main.f10874e4.chunk.css",
-    "main.js": "/alfa-demo/static/js/main.6d406a58.chunk.js",
-    "main.js.map": "/alfa-demo/static/js/main.6d406a58.chunk.js.map",
+    "main.js": "/alfa-demo/static/js/main.014952f9.chunk.js",
+    "main.js.map": "/alfa-demo/static/js/main.014952f9.chunk.js.map",
     "runtime-main.js": "/alfa-demo/static/js/runtime-main.399c7b03.js",
     "runtime-main.js.map": "/alfa-demo/static/js/runtime-main.399c7b03.js.map",
     "static/css/2.3c5162cb.chunk.css": "/alfa-demo/static/css/2.3c5162cb.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.3c5162cb.chunk.css",
     "static/js/2.ad20d9cf.chunk.js",
     "static/css/main.f10874e4.chunk.css",
-    "static/js/main.6d406a58.chunk.js"
+    "static/js/main.014952f9.chunk.js"
   ]
 }
