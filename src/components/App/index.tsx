@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import {useAppDispatch, useAppSelector} from '../../redux/store';
 import Card from '../Card';
 import {deleteItem, toggleFavorites, toggleLike} from '../../redux/appSlice';
-import {Container, Button, Card as UICard, Loader, Dimmer} from 'semantic-ui-react';
+import {Container, Button, Card as UICard, Loader, Dimmer, Label, Message, Grid} from 'semantic-ui-react';
 import {fetchData} from '../../redux/imagesSlice';
 
 const App = () => {
@@ -54,8 +54,15 @@ const App = () => {
             {
                 status === 'rejected' &&
                 <Dimmer inverted active>
-                    <Container textAlign={'center'} as={'p'} color={'black'} text>{error}</Container>
-                    <Button color={'red'} onClick={() => dispatch(fetchData())}>Try again</Button>
+                    <div className={styles.error}>
+                        <Label basic color={'red'} className={styles.message}>{error}</Label>
+                        <Button
+                            color={'red'}
+                            size={'small'}
+                            onClick={() => dispatch(fetchData())}>
+                            Try again
+                        </Button>
+                    </div>
                 </Dimmer>
             }
         </div>
