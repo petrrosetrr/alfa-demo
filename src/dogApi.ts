@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
 
 export interface IDogData {
     status: string,
-    data: Array<string>;
+    message: Array<string>;
 }
 
 interface IDogApi {

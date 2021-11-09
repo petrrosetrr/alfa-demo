@@ -1,45 +1,42 @@
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {dogApi, IDogData} from '../dogApi';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {dogApi} from '../dogApi';
+import {nanoid} from 'nanoid';
 
 interface IImagesState {
-    loading: boolean;
+    status: 'fulfilled' | 'pending' | 'rejected' | null;
     error: string | null;
-    data: IDogData | null;
+    data: {[key: string]: string};
 }
 
 const initialState: IImagesState = {
-    loading: false,
     error: null,
-    data: null,
+    status: null,
+    data: {},
 }
 
 export const fetchData = createAsyncThunk(
     'imagesSlice/fetchData',
     async (arg?: number) => {
-            return await dogApi.getRandomDogs(arg);
-});
+        return await dogApi.getRandomDogs(arg);
+    });
 
 export const imagesSlice = createSlice({
     name: 'imagesSlice',
     initialState,
-    reducers: {
-        setData(state, action: PayloadAction<IDogData>) {
-            state.data =  action.payload;
-        }
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(fetchData.pending, ((state) => {
-            state.loading = true;
+            state.status = 'pending';
             }))
             .addCase(fetchData.rejected, (state, {error}) => {
-                state.loading = false;
+                state.status = 'rejected';
                 state.error = error.message || 'Something went wrong :(';
             })
             .addCase(fetchData.fulfilled, (state, {payload}) => {
-                state.data = payload;
+                state.status = 'fulfilled';
+                payload.message.forEach(src => state.data[nanoid()] = src);
                 state.error = null;
-                state.loading = false;
             })
     }
 })

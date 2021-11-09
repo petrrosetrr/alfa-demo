@@ -7,30 +7,36 @@ interface IAppState {
 }
 
 const initialState: IAppState =  {
-    onlyFavorites: true,
+    onlyFavorites: false,
     favorites: [],
-    deleted: []
+    deleted: [],
 }
 
 export const appSlice = createSlice({
     name: 'appSlice',
     initialState,
     reducers: {
-        addToFavorites (state, action: PayloadAction<string>) {
-            state.favorites.push(action.payload);
-        },
-        removeFromFavorites (state, action: PayloadAction<string>) {
-            state.favorites = state.favorites.filter(item => item !== action.payload);
-        },
-        deleteItem (state, action: PayloadAction<string>) {
-            state.deleted.push(action.payload);
-            state.favorites = state.favorites.filter(item => item !== action.payload);
-        },
         toggleFavorites (state) {
-            state.onlyFavorites = !state.onlyFavorites;
-        }
+            state.onlyFavorites = !state.onlyFavorites
+        },
+        toggleLike (state, {payload}: PayloadAction<string>) {
+            const index = state.favorites.indexOf(payload);
+            if (index === -1) {
+                state.favorites.push(payload);
+            }
+            else {
+                state.favorites.splice(index, 1);
+                if (!state.favorites.length) {
+                    state.onlyFavorites = false;
+                }
+            }
+        },
+        deleteItem ({favorites, deleted}, {payload}: PayloadAction<string>) {
+            deleted.push(payload);
+            favorites = favorites.filter(id => id !== payload);
+        },
     }
 });
 
-export const {addToFavorites, removeFromFavorites, deleteItem, toggleFavorites} = appSlice.actions
+export const {deleteItem, toggleFavorites, toggleLike} = appSlice.actions
 export default appSlice.reducer
